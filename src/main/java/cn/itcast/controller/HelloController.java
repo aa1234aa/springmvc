@@ -13,4 +13,9 @@ public class HelloController {
         System.out.println("hello stringmvc");
         return "success";
     }
+    @RequestMapping(path = "/sayHi")
+    public String sayHi(){
+        System.out.println("hi,stringmvc");
+        return "success";
+    }
 }
