@@ -12,7 +12,11 @@
 </head>
 <body>
    <h3>访问成功了</h3>
-     ${ msg }
-     ${sessionScope}
+    <%-- ${ msg }
+     ${sessionScope}--%>
+${user.age}<br/>
+${user.date}<br/>
+${user.username}<br/>
+
 </body>
 </html>
