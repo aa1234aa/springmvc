@@ -13,5 +13,8 @@
 <body>
   <h3>入门程序</h3>
   <a href="sayHi">requestmapping注解</a>
+  <a href="user/testString">testString</a>
+  <a href="user/testVoid">testVoid</a>
+  <a href="user/testModelAndView">testModelAndView</a>
 </body>
 </html>

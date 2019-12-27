@@ -33,6 +33,8 @@
                            </set>
         </property>
     </bean>
+    <!--前端控制器，哪些静态资源不拦截-->
+    <mvc:resources location="/js/" mapping="/js/**"/>
     <!--开启springmvc注解支持-->
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
         </beans>
