@@ -16,7 +16,19 @@
 
         $(function(){
             $("#btn").click(function () {
-                alert("hello word");
+                $.ajax({
+                    type: "POST",
+                    url: "user/testAjax",
+                    data: '{"username":"安安","age":30,"password":"123"}',
+                    dataType:"json",
+                    contentType:"application/json;charset:UTF-8",
+                    success: function(data){
+                        alert(data);
+                        alert(data.username);
+                        alert(data.password)
+                        alert(data.dateTime)
+                    }
+                });
             });
         });
 

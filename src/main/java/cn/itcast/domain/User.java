@@ -7,7 +7,18 @@ import java.util.Date;
  */
 public class User {
     private String username;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
     private Integer age;
+    private Date date;
 
     public Date getDate() {
         return date;
@@ -17,7 +28,6 @@ public class User {
         this.date = date;
     }
 
-    private Date date;
     public String getUsername() {
         return username;
     }
@@ -38,6 +48,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", age=" + age +
                 ", date=" + date +
                 '}';
