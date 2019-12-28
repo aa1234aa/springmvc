@@ -8,7 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <title>Title</title>
+    <script type="text/javascript">
+        $(function(){
+            $("#btn").click(function () {
+                alert("hello word");
+            });
+        });
+    </script>
 </head>
 <body>
    <h3>访问成功了</h3>
