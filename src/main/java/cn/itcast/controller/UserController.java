@@ -1,6 +1,9 @@
 package cn.itcast.controller;
 
 import cn.itcast.domain.User;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,7 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * xx模块
@@ -62,5 +68,37 @@ public class UserController {
         user.setUsername("daan");
         user.setDate(new Date());
         return user;
+    }
+    @RequestMapping("/fileupload")
+    public String fileupload(HttpServletRequest request)throws Exception{
+        System.out.println("fileupload的方法执行了");
+        //上传的位置
+        String path=request.getSession().getServletContext().getRealPath("/upload/");
+        //判断路径是否存在
+        File file=new File(path);
+        if (!file.exists()){
+            file.mkdir();
+        }
+        //解析request对象，获取文件上传项
+        DiskFileItemFactory factory=new DiskFileItemFactory();
+        ServletFileUpload upload=new ServletFileUpload(factory);
+        //解析request
+        List<FileItem> items=upload.parseRequest(request);
+        //遍历
+        for (FileItem item:items){
+            if (item.isFormField()){
+                //说明普通表单向
+            }else {
+                //获取上传文件
+                String filename=item.getName();
+                String uuid=UUID.randomUUID().toString().replace("","");
+                filename=uuid+"_"+filename;
+                //完成上传
+                item.write(new File(path,filename));
+                //删除文件
+                item.delete();
+            }
+        }
+        return "success";
     }
 }

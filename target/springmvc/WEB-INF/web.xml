@@ -11,7 +11,7 @@
       <!--全局初始化-->
       <init-param>
           <param-name>contextConfigLocation</param-name>
-          <param-value>classpath:springmvc.xml</param-value>
+          <param-value>/WEB-INF/spring/springmvc.xml</param-value>
       </init-param>
       <load-on-startup>1</load-on-startup>
   </servlet>
