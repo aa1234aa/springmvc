@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -100,5 +102,22 @@ public class UserController {
             }
         }
         return "success";
+    }
+    @RequestMapping("/fileupload1")
+    public String fileupload1(HttpServletRequest request, MultipartFile upload) throws Exception{
+        System.out.println("fileupload1的方法执行了");
+        //上传的位置
+        String path=request.getSession().getServletContext().getRealPath("/uploads/");
+        //判断路径是否存在
+        File file=new File(path);
+        if (!file.exists()){
+            file.mkdir();
+        }
+                //获取上传文件
+                String filename=upload.getOriginalFilename();
+                String uuid=UUID.randomUUID().toString().replace("-","");
+                filename=uuid+"_"+filename;
+                upload.transferTo(new File(path,filename));
+                return "success";
     }
 }
