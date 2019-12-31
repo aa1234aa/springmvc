@@ -40,6 +40,16 @@
     </bean>
     <!--前端控制器，哪些静态资源不拦截-->
     <mvc:resources location="/js/" mapping="/js/**"/>
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--要拦截的具体的方法-->
+            <mvc:mapping path="/springmvc/user/*"/>
+            <bean class="cn.itcast.intercepor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!--配置异常处理器-->
+    <bean id="SysExceptionResolver" class="cn.itcast.exception.SysExceptionResolver"></bean>
     <!--开启springmvc注解支持-->
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
         </beans>

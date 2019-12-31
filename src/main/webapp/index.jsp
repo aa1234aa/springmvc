@@ -10,7 +10,7 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<>
   <%--<h3>入门程序</h3>
   <a href="sayHi">requestmapping注解</a>
   <a href="user/testString">testString</a>
@@ -24,7 +24,8 @@
   <form action="user/upLoad" method="post" enctype="multipart/form-data">
     选择文件：<input type="file" name="upload"><br/>
     <input type="submit" value="上传">
-  </form>--%>
-  <a href="user/testException">testVoid</a>
+  </form>--%>testInterceptor
+  <a href="user/testException">testVoid</a><<br/>
+  <a href="user/testInterceptor">testInterceptor</a>
  </body>
 </html>
