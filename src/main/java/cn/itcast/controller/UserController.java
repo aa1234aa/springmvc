@@ -1,6 +1,7 @@
 package cn.itcast.controller;
 
 import cn.itcast.domain.User;
+import cn.itcast.exception.SysException;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -136,6 +137,19 @@ public class UserController {
         //可以把流保存为文件1，然后对文件1进行复制，移动等操作
         //transferTo转存文件到指定路径
         file.transferTo(file2);
+        return "success";
+    }
+    @RequestMapping("/testException")
+    public String  testException()throws SysException{
+        System.out.println("testException的方法执行了");
+        try {
+            int a=10/0;
+        } catch (Exception e) {
+            //打印异常
+            e.printStackTrace();
+            //抛出自定义异常
+            throw new SysException("查询所有用户出现错误了");
+        }
         return "success";
     }
 }
