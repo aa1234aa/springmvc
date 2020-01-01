@@ -17,15 +17,16 @@
   <a href="user/testVoid">testVoid</a>
   <a href="user/testModelAndView">testModelAndView</a>
   <a href="user/fileupload">testVoid</a>--%>
- <%-- <form action="user/fileupload" method="post" enctype="multipart/form-data">
+ <form action="user/fileupload1" method="post" enctype="multipart/form-data">
     选择文件：<input type="file" name="upload"><br/>
               <input type="submit" value="上传">
       </form>
-  <form action="user/upLoad" method="post" enctype="multipart/form-data">
+<%--  <form action="user/upLoad" method="post" enctype="multipart/form-data">
     选择文件：<input type="file" name="upload"><br/>
     <input type="submit" value="上传">
-  </form>--%>testInterceptor
+  </form>&ndash;%&gt;testInterceptor
   <a href="user/testException">testVoid</a><<br/>
-  <a href="user/testInterceptor">testInterceptor</a>
+  <a href="user/testInterceptor">testInterceptor</a>--%>
+<a href="user/testInterceptor">testInterceptor</a><br/>
  </body>
 </html>

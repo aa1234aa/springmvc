@@ -24,6 +24,6 @@ public class SysExceptionResolver implements HandlerExceptionResolver {
         ModelAndView mv=new ModelAndView();
         mv.addObject("errorMsg",e.getMessage());
         mv.setViewName("error");
-        return null;
+        return mv;
     }
 }
