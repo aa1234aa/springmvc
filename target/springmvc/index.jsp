@@ -27,6 +27,6 @@
   </form>&ndash;%&gt;testInterceptor
   <a href="user/testException">testVoid</a><<br/>
   <a href="user/testInterceptor">testInterceptor</a>--%>
-<a href="user/testInterceptor">testInterceptor</a><<br/>
+<a href="user/testInterceptor">testInterceptor</a><br/>
  </body>
 </html>
